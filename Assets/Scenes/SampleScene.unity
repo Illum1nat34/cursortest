@@ -342,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187179577}
   - component: {fileID: 187179576}
+  - component: {fileID: 187179578}
   m_Layer: 0
   m_Name: Exit_2
   m_TagString: Untagged
@@ -377,6 +378,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187179578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187179575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &310146040
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332720823}
   - component: {fileID: 332720822}
+  - component: {fileID: 332720824}
   m_Layer: 0
   m_Name: Exit_1
   m_TagString: Untagged
@@ -632,6 +651,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332720824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332720821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &388050920
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388050922}
   - component: {fileID: 388050921}
+  - component: {fileID: 388050923}
   m_Layer: 0
   m_Name: Noize_1
   m_TagString: Untagged
@@ -678,54 +715,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &540918468
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 540918472}
-  - component: {fileID: 540918471}
-  m_Layer: 0
-  m_Name: LootSpot_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &540918471
+--- !u!114 &388050923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540918468}
+  m_GameObject: {fileID: 388050920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80983c76d814eb48b63178a03283a7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootVolume: 0.1
-  lootValue: 1
-  singleUse: 1
-  isLooted: 0
---- !u!4 &540918472
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540918468}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026436571}
   - component: {fileID: 1026436570}
+  - component: {fileID: 1026436572}
   m_Layer: 0
   m_Name: LootSpot_4
   m_TagString: Untagged
@@ -1040,6 +1047,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026436572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026436569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1030717583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309570880}
   - component: {fileID: 1309570879}
+  - component: {fileID: 1309570881}
   m_Layer: 0
   m_Name: Noize_2
   m_TagString: Untagged
@@ -1296,6 +1321,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309570881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309570878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1359537673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369540517}
   - component: {fileID: 1369540516}
+  - component: {fileID: 1369540518}
   m_Layer: 0
   m_Name: LootSpot_5
   m_TagString: Untagged
@@ -1449,6 +1492,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369540518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369540515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1559920319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1559920321}
   - component: {fileID: 1559920320}
+  - component: {fileID: 1559920322}
   m_Layer: 0
   m_Name: LootSpot_3
   m_TagString: Untagged
@@ -1497,6 +1558,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559920322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559920319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1566280183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1782,72 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1593203611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593203614}
+  - component: {fileID: 1593203613}
+  - component: {fileID: 1593203612}
+  m_Layer: 0
+  m_Name: LootSpot_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1593203612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593203611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1593203613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593203611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80983c76d814eb48b63178a03283a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootVolume: 0.1
+  lootValue: 2
+  singleUse: 1
+  isLooted: 0
+--- !u!4 &1593203614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593203611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2247,6 +2391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2113723977}
   - component: {fileID: 2113723976}
+  - component: {fileID: 2113723978}
   m_Layer: 0
   m_Name: LootSpot_2
   m_TagString: Untagged
@@ -2285,6 +2430,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113723978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113723975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6f397232dccad44b750acb1b893d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootSpotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  exitColor: {r: 0, g: 0, b: 1, a: 1}
+  noizeColor: {r: 1, g: 0, b: 0, a: 1}
+  exitRadiusColor: {r: 0, g: 1, b: 0, a: 1}
+  noizeRadiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2303,8 +2465,8 @@ SceneRoots:
   - {fileID: 1030717587}
   - {fileID: 1359537677}
   - {fileID: 918668711}
-  - {fileID: 540918472}
   - {fileID: 2113723977}
+  - {fileID: 1593203614}
   - {fileID: 1559920321}
   - {fileID: 1026436571}
   - {fileID: 1369540517}
