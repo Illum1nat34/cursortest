@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1bb01d5c7234a42b6c8826b07f3f9f, type: 3}
+  m_Name: Perk_steps
+  m_EditorClassIdentifier: 
+  id: Steps_1
+  displayName: Cat Steps
+  description: 
+  type: 0
+  rarity: 0
+  cp: 1
+  tags: 1
+  source: 0
+  mutuallyExclusivePerkIds: []
+  modifiers:
+    utility:
+      wLoot: 0
+      wExtract: 0
+      wFightPvP: 0
+      wFightPvE: 0
+      wHeal: 0
+      wHide: 0
+    thresholds:
+      earlyExitLootBias: 0
+      greedyExitLootBias: 0
+      lowHPBias: 0
+    protocol:
+      preferStealthRoutes: 1
+      avoidChokePoints: 0
+      allowFakeExtract: 0
+      prefer1v1Duels: 0
+      chaseRareLoot: 0
+    riskBias: 0
+    noiseBias: 0

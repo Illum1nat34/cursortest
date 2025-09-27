@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe0004903b384d45a682d45510547fd, type: 3}
+  m_Name: NewLoadout
+  m_EditorClassIdentifier: 
+  maxSlots: 6
+  cpBudget: 10
+  selectedPerks:
+  - {fileID: 11400000, guid: 8a4e80f344b5ee2409c3f8c0cf697ece, type: 2}
+  - {fileID: 11400000, guid: 2f30446f1a36dd242858bff09ace0fda, type: 2}
+  - {fileID: 11400000, guid: 5f585b337af1ecd418335298460ba15f, type: 2}
