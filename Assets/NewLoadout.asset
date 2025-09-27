@@ -17,4 +17,3 @@ MonoBehaviour:
   selectedPerks:
   - {fileID: 11400000, guid: 8a4e80f344b5ee2409c3f8c0cf697ece, type: 2}
   - {fileID: 11400000, guid: 2f30446f1a36dd242858bff09ace0fda, type: 2}
-  - {fileID: 11400000, guid: 5f585b337af1ecd418335298460ba15f, type: 2}
