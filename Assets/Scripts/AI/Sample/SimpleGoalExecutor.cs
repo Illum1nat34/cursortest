@@ -16,6 +16,12 @@ public class SimpleGoalExecutor : MonoBehaviour
     [Tooltip("При какой суммарной ценности считаем, что уже ‘много’. Используется для LootValue01 (0..1)")]
     public float lootValueForNormalization = 200f;
 
+    [Header("Поиск пути")]
+    [Tooltip("Максимальный радиус семплинга целевой точки на NavMesh")]
+    public float sampleRadius = 2.0f;
+    [Tooltip("Отбрасывать частичные пути (NavMeshPathStatus.Partial)")]
+    public bool rejectPartialPaths = true;
+
     NavMeshAgent agent;
     UtilityGoal lastGoal = UtilityGoal.Loot;
     LootSpot currentLoot;
@@ -26,6 +32,8 @@ public class SimpleGoalExecutor : MonoBehaviour
 
     float carriedLootValue = 0f;
 
+    NavMeshPath _tmpPath; // переиспользуем для экономии GC
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -33,6 +41,7 @@ public class SimpleGoalExecutor : MonoBehaviour
         if (!decision) decision = GetComponent<UtilityDecisionMaker>();
         lootSpots = GameObject.FindObjectsOfType<LootSpot>();
         exits = GameObject.FindObjectsOfType<ExitZone>();
+        _tmpPath = new NavMeshPath();
         UpdateLootDensity();
         blackboard.Set01(BB.LootValue01, 0f);
     }
@@ -64,9 +73,9 @@ public class SimpleGoalExecutor : MonoBehaviour
     {
         if (!currentLoot || currentLoot.isLooted)
         {
-            currentLoot = FindNearestLoot();
+            currentLoot = FindNearestLootByPath();
             if (currentLoot)
-                agent.SetDestination(currentLoot.transform.position);
+                agent.SetDestination(GetNavmeshPoint(currentLoot.transform.position));
         }
         else
         {
@@ -105,9 +114,9 @@ public class SimpleGoalExecutor : MonoBehaviour
     {
         if (!currentExit)
         {
-            currentExit = FindNearestExit();
+            currentExit = FindNearestExitByPath();
             if (currentExit)
-                agent.SetDestination(currentExit.transform.position);
+                agent.SetDestination(GetNavmeshPoint(currentExit.transform.position));
         }
         else
         {
@@ -121,34 +130,78 @@ public class SimpleGoalExecutor : MonoBehaviour
         }
     }
 
-    LootSpot FindNearestLoot()
+    // --- NEW: выбор ближайшей цели по длине пути по навмешу (и проверка достижимости)
+    LootSpot FindNearestLootByPath()
     {
         LootSpot best = null;
-        float bestD = float.MaxValue;
-        Vector3 p = transform.position;
+        float bestLen = float.MaxValue;
+        Vector3 start = transform.position;
+
         for (int i = 0; i < lootSpots.Length; i++)
         {
             var l = lootSpots[i];
             if (!l || l.isLooted) continue;
-            float d = Vector3.Distance(p, l.transform.position);
-            if (d < bestD) { bestD = d; best = l; }
+
+            float len;
+            if (!TryPathLength(start, l.transform.position, out len)) continue;
+            if (len < bestLen)
+            {
+                bestLen = len;
+                best = l;
+            }
         }
         return best;
     }
 
-    ExitZone FindNearestExit()
+    ExitZone FindNearestExitByPath()
     {
         ExitZone best = null;
-        float bestD = float.MaxValue;
-        Vector3 p = transform.position;
+        float bestLen = float.MaxValue;
+        Vector3 start = transform.position;
+
         for (int i = 0; i < exits.Length; i++)
         {
             var e = exits[i];
             if (!e) continue;
-            float d = Vector3.Distance(p, e.transform.position);
-            if (d < bestD) { bestD = d; best = e; }
+
+            float len;
+            if (!TryPathLength(start, e.transform.position, out len)) continue;
+            if (len < bestLen)
+            {
+                bestLen = len;
+                best = e;
+            }
         }
         return best;
+    }
+
+    bool TryPathLength(Vector3 from, Vector3 to, out float length)
+    {
+        length = float.PositiveInfinity;
+
+        Vector3 a = GetNavmeshPoint(from);
+        Vector3 b = GetNavmeshPoint(to);
+
+        if (!NavMesh.CalculatePath(a, b, NavMesh.AllAreas, _tmpPath)) return false;
+        if (_tmpPath.status == NavMeshPathStatus.PathInvalid) return false;
+        if (rejectPartialPaths && _tmpPath.status == NavMeshPathStatus.PathPartial) return false;
+
+        float dist = 0f;
+        var corners = _tmpPath.corners;
+        if (corners == null || corners.Length < 2) return false;
+        for (int i = 1; i < corners.Length; i++)
+            dist += Vector3.Distance(corners[i - 1], corners[i]);
+
+        if (float.IsInfinity(dist) || float.IsNaN(dist)) return false;
+        length = dist;
+        return true;
+    }
+
+    Vector3 GetNavmeshPoint(Vector3 worldPos)
+    {
+        if (NavMesh.SamplePosition(worldPos, out var hit, sampleRadius, NavMesh.AllAreas))
+            return hit.position;
+        return worldPos; // fallback
     }
 
     void UpdateLootDensity()
